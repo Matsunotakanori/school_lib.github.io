@@ -51,14 +51,10 @@
       <li>
         <p class="horizon"></p>
         <dl>
-    <!--
         <dd class="kiji1">{{ item.cls1 }} || {{ item.cls2 }} || {{ item.cls3 }} </dd>
-    -->
         <dd class="kiji2">{{ item.title }} {{ item.auth }} </dd>
-    <!--
         <dd class="kiji3">{{ item.pub }}, {{ item.pub_year }}  {{ item.series }} </dd>
         <dd class="kiji4">{{ item.rgtn }} ISBN:{{ item.isbn }} </dd>
-    -->
         </dl>
       </li>
       {% endfor %}
@@ -76,7 +72,7 @@
   var options = {
     // 対象とするclass を指定
     // valueNames: ['kiji', 'vol', 'hizuke', ],
-    valueNames: ['kiji2', ],
+    valueNames: ['title', ],
     // ページネーション指定 pageはページごとの表示件数
     page: 10,
     pagination: {
