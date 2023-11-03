@@ -48,7 +48,30 @@
     -->
     <ul class="list list-unstyled">
 
-      {% for item in site.data.school_lib_data  %}
+      {% for item in site.data.school_lib_data2023  %}
+      <li>
+        <p class="horizon"></p>
+        <dl>
+        <dd class="kiji1">{{ item.cls1 }} || {{ item.cls2 }} || {{ item.cls3 }} </dd>
+        <dd class="kiji2">{{ item.title }} {{ item.auth }} </dd>
+        <dd class="kiji3">{{ item.pub }}, {{ item.pub_year }}  {{ item.series }} </dd>
+        <dd class="kiji4">{{ item.rgtn }} ISBN:{{ item.isbn }} </dd>
+        </dl>
+      </li>
+      {% endfor %}
+      
+      {% for item in site.data.school_lib_data2022  %}
+      <li>
+        <p class="horizon"></p>
+        <dl>
+        <dd class="kiji1">{{ item.cls1 }} || {{ item.cls2 }} || {{ item.cls3 }} </dd>
+        <dd class="kiji2">{{ item.title }} {{ item.auth }} </dd>
+        <dd class="kiji3">{{ item.pub }}, {{ item.pub_year }}  {{ item.series }} </dd>
+        <dd class="kiji4">{{ item.rgtn }} ISBN:{{ item.isbn }} </dd>
+        </dl>
+      </li>
+      {% endfor %}
+            {% for item in site.data.school_lib_data2021  %}
       <li>
         <p class="horizon"></p>
         <dl>
