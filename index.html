@@ -52,8 +52,8 @@
 
       <dl>
         <a href ="{{item.url }}">
-        <dd class="kiji2"> {{ item.cls1 }}</dd>
-        <dd class="kiji1"> {{ item.title }} no. {{ item.auth }} ({{ item.pub }})
+        <dd class="kiji1"> {{ item.cls1 }} || {{ item.cls2 }} || {{ item.cls3 }}</dd>
+        <dd class="kiji2"> {{ item.title }} {{ item.auth }} {{ item.pub }}  {{ item.pub_year }}  {{ item.series }}
         </a>
       </dl>
     
@@ -73,7 +73,7 @@
   var options = {
     // 対象とするclass を指定
     // valueNames: ['kiji', 'vol', 'hizuke', ],
-    valueNames: ['kiji1', ],
+    valueNames: ['title', auth ],
     // ページネーション指定 pageはページごとの表示件数
     page: 20,
     pagination: {
