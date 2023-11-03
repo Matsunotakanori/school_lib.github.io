@@ -46,17 +46,14 @@
     <ul class="list list-unstyled">
 
       {% for item in site.data.school_lib_data  %}
-
       <li>
-      <p class="horizon"></p>
-
-      <dl>
-        <dd class="kiji1">CLS :{{ item.cls1 }} || {{ item.cls2 }} || {{ item.cls3 }} 
-        <dd class="kiji2">"TR :"{{ item.title }} {{ item.auth }} 
-        <dd class="kiji3">PUB:{{ item.pub }}, {{ item.pub_year }}  {{ item.series }} 
-        <dd class="kiji4">RGTN:{{ item.rgtn }} ISBN:{{ item.isbn }} 
-      </dl>
-    
+        <p class="horizon"></p>
+        <dl>
+        <dd class="kiji1">CLS:{{ item.cls1 }} || {{ item.cls2 }} || {{ item.cls3 }} </dd>
+        <dd class="kiji2">TR:{{ item.title }} {{ item.auth }} </dd>
+        <dd class="kiji3">PUB:{{ item.pub }}, {{ item.pub_year }}  {{ item.series }} </dd>
+        <dd class="kiji4">RGTN:{{ item.rgtn }} ISBN:{{ item.isbn }} </dd>
+        </dl>
       </li>
       {% endfor %}
     </ul>
