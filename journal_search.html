@@ -12,7 +12,7 @@
   <!-- pace を使ったローディングバーの表示 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-loading-bar.min.css" integrity="sha512-p/7j92gn7aB9tDnfPF70pYqrHofcWtimt2eA+yEe2+h74ur0vHO79yjrpF0s1K9d02R6gkpBmLdZwPaCiazPQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha512-2cbsQGdowNDPcKuoBd2bCcsJky87Mv0LEtD/nunJUgk6MOYTgVMGihS/xCEghNf04DPhNiJ4DZw5BxDd1uyOdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <title>簡易OPAC（調整中）</title>
+  <title>購読雑誌 特集検索</title>
 </head>
 <body class="container">
   
@@ -33,7 +33,6 @@
       <input id="keyword" class="search form-control form-control-lg" placeholder="input any word" size="50" />
 
       <button class="sort" data-sort="kiji1">
-      Sort by 分類
       </button>
 
       <span id="hits"></span>
@@ -55,7 +54,7 @@
         <p class="horizon"></p>
         <dl>
         <dd class="kiji1">{{ item.TITLE }} || {{ item.VOL }} || {{ item.NO }} </dd>
-        <dd class="kiji2">{{ item.TOKUSHU }}} </dd>
+        <dd class="kiji2">{{ item.TOKUSHU }} </dd>
         </dl>
       </li>
       {% endfor %}
