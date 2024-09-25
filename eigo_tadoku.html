@@ -48,12 +48,12 @@
          classは任意設定
     -->
     <ul class="list list-unstyled">
-      {% for item in site.data.journal %}
+      {% for item in site.data.eigo_tadoku_1 %}
       <li>
         <p class="horizon"></p>
         <dl>
-        <dd class="kiji1">{{ item.TITLE }} Vol.{{ item.VOL }} No. {{ item.NO }} ( {{ item.YEAR }} ) </dd>
-        <dd class="kiji2">{{ item.TOKUSHU }} </dd>
+        <dd class="kiji1">{{ item.title }}  </dd>
+        <dd class="kiji2">{{ item.series }} </dd>
         </dl>
       </li>
       {% endfor %}
