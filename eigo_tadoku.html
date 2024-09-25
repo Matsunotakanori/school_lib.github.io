@@ -1,4 +1,3 @@
-
 ---
 
 ---
@@ -13,15 +12,16 @@
   <!-- pace を使ったローディングバーの表示 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-loading-bar.min.css" integrity="sha512-p/7j92gn7aB9tDnfPF70pYqrHofcWtimt2eA+yEe2+h74ur0vHO79yjrpF0s1K9d02R6gkpBmLdZwPaCiazPQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha512-2cbsQGdowNDPcKuoBd2bCcsJky87Mv0LEtD/nunJUgk6MOYTgVMGihS/xCEghNf04DPhNiJ4DZw5BxDd1uyOdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <title>英語多読図書</title>
+  <title>購読雑誌 特集検索</title>
 </head>
 <body class="container">
-  
-  <h1 id="top">英語多読図書</h1>
+    <h1 id="top">英語多読 </h1>
+更新日（2023-12-15）
   <ul>
-    <li>2024-09-25_2
-    </li>
-  </ul>
+    対象雑誌
+    <li>AERA</li>
+    <li>Newsweek</li>
+    </ul>
   <!-- list.jsのブロック idはlist.jsの呼び出しに使う　HTML末尾のスクリプトで指定している -->
 
   
@@ -48,12 +48,12 @@
          classは任意設定
     -->
     <ul class="list list-unstyled">
-      {% for item in site.data.eigo_tadoku_1 %}
+      {% for item in site.data.journal %}
       <li>
         <p class="horizon"></p>
         <dl>
-        <dd class="kiji1">{{ item.title }} {{ item.auth }} No. {{ item.pub }} ( {{ item.pub_year }} ) </dd>
-        <dd class="kiji2">{{ item.series }} </dd>
+        <dd class="kiji1">{{ item.TITLE }} Vol.{{ item.VOL }} No. {{ item.NO }} ( {{ item.YEAR }} ) </dd>
+        <dd class="kiji2">{{ item.TOKUSHU }} </dd>
         </dl>
       </li>
       {% endfor %}
