@@ -19,7 +19,8 @@
   
   <h1 id="top">英語多読図書</h1>
   <ul>
-    <li>2024-09-25_1</li>
+    <li>2024-09-25_2
+    </li>
   </ul>
   <!-- list.jsのブロック idはlist.jsの呼び出しに使う　HTML末尾のスクリプトで指定している -->
 
@@ -31,9 +32,8 @@
       <input id="keyword" class="search form-control form-control-lg" placeholder="input any word" size="50" />
 
       <button class="sort" data-sort="kiji1">
-      Sort by 分類
+      Sort by VOL. No.
       </button>
-
       <span id="hits"></span>
 
     </div>
@@ -48,25 +48,18 @@
          classは任意設定
     -->
     <ul class="list list-unstyled">
-          
-      {% for item in site.data.eigo_tadoku_1 %}
+      {% for item in site.data.eigo_tadoku %}
       <li>
         <p class="horizon"></p>
         <dl>
-        <dd class="kiji1">{{ item.分類記号 }} || {{ item.図書記号 }} || {{ item.巻冊記号 }} </dd>
-    <!--
-          <dd class="kiji2">{{ item.書名 }} {{ item.著者名 }} </dd>
-
-          <dd class="kiji3">{{ item.出版社 }}, {{ item.版年 }}  {{ item.叢書名等 }} </dd>
-        <dd class="kiji4">{{ item.受入日 }} RGTN:{{ item.登録番号 }} ISBN:{{ item.ISBN }} </dd>
-     -->
+        <dd class="kiji1">{{ item.書名 }} {{ item.著者名 }} No. {{ item.出版社 }} ( {{ item.版年 }} ) </dd>
+        <dd class="kiji2">{{ item.叢書名等 }} </dd>
         </dl>
       </li>
       {% endfor %}
-          
     </ul>
   </div>
-    <hr>
+  <hr>
   <footer>
     <a href="#top">ページトップへ</a>
   </footer>
