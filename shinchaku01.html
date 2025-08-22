@@ -52,8 +52,10 @@
       {% for item in site.data.sample003_out %}
       <li>
         <p class="horizon"></p>
-        <dd class="kiji1">{{ item.title }} / {{ item.auth }} </dd>
+        <dd class="kiji1">{{ item.title url }} / {{ item.auth }} </dd>
         <dd class="kiji2">{{ item.pub }} ,  {{ item.series }} -- {{ item.ym }}</dd>
+
+
       </li>
       {% endfor %}
     </ul>
