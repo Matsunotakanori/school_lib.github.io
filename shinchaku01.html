@@ -12,10 +12,10 @@
   <!-- pace を使ったローディングバーの表示 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-loading-bar.min.css" integrity="sha512-p/7j92gn7aB9tDnfPF70pYqrHofcWtimt2eA+yEe2+h74ur0vHO79yjrpF0s1K9d02R6gkpBmLdZwPaCiazPQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha512-2cbsQGdowNDPcKuoBd2bCcsJky87Mv0LEtD/nunJUgk6MOYTgVMGihS/xCEghNf04DPhNiJ4DZw5BxDd1uyOdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <title>英語多読図書</title>
+  <title>新着図書表示</title>
 </head>
 <body class="container">
-    <h1 id="top">英語多読図書</h1>
+    <h1 id="top">新着図書表示</h1>
 更新日（2024-09-27）
   <ul>
   </ul>
@@ -49,13 +49,11 @@
          classは任意設定
     -->
     <ul class="list list-unstyled">
-      {% for item in site.data.eigo_tadoku %}
+      {% for item in site.data.shinchaku %}
       <li>
         <p class="horizon"></p>
         <dd class="kiji1">{{ item.title }} / {{ item.auth }} </dd>
-        <dd class="kiji2">{{ item.pub }} ,  {{ item.pub_year }} -- {{ item.series }}</dd>
-        <dd class="kiji3">登録番号:{{ item.rgtn }} 請求記号:{{ item.cls1 }}||{{ item.cls2 }}||{{ item.cls3 }} </dd>
-        </dl>
+        <dd class="kiji2">{{ item.pub }} ,  {{ item.series }} -- {{ item.ym }}</dd>
       </li>
       {% endfor %}
     </ul>
