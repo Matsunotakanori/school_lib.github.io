@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link media="all" href="css/4listjs.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-loading-bar.min.css" integrity="sha512-p/7j92gn7aB9tDnfPF70pYqrHofcWtimt2eA+yEe2+h74ur0vHO79yjrpF0s1K9d02R6gkpBmLdZwPaCiazPQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha512-2cbsQGdowNDPcKuoBd2bCcsJky87Mv0LEtD/nunJUgk6MOYTgVMGihS/xCEghNf04DPhNiJ4DZw5BxDd1uyOdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>新着図書表示</title>
+</head>
+<body class="container">
+    <h1 id="top">新着図書表示</h1>
+    <p>更新日（2024-09-27）</p>
+
+    <div id="listdata">
+        <div class="form-group mb-3">
+            <label for="keyword">表示データの絞り込みができます。<span class="alert">※半角スペース区切りでAND検索可能</span></label>
+            <input id="keyword" class="search form-control form-control-lg" placeholder="キーワードを入力" size="30"/>
+        </div>
+
+        <div class="form-group mb-3">
+            <button class="sort btn btn-primary me-2" data-sort="title">
+                タイトル順
+            </button>
+            <button class="sort btn btn-primary" data-sort="series">
+                シリーズ順
+            </button>
+            <span id="hits" class="ms-3"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <ul class="pagination list-inline"></ul>
+        </div>
+        
+        <ul class="list list-unstyled">
+            {% for item in site.data.sample003_out %}
+            <li>
+                <hr>
+                <div class="book-item">
+                    <p>
+                        <span class="title">{{ item.title }}</span> / <span class="auth">{{ item.auth }}</span>
+                    </p>
+                    <p class="series-info">
+                        <span class="pub">{{ item.pub }}</span> , <span class="series">{{ item.ser }}</span> -- <span class="ym">{{ item.ym }}</span>
+                    </p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <hr>
+    <footer>
+        <a href="#top">ページトップへ</a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+    <script>
+        var options = {
+            valueNames: ['title', 'auth', 'pub', 'series', 'ym'],
+            page: 50,
+            pagination: {
+                paginationClass: 'pagination',
+                innerWindow: 4,
+                outerWindow: 1,
+                item: '<li class="page-item"><a class="page page-link" href="#"></a></li>',
+            }
+        };
+
+        var listObj = new List('listdata', options);
+        
+        // ページネーションと検索結果の更新
+        listObj.on('updated', function(list) {
+            $('#hits').html(list.matchingItems.length + "件ヒットしました");
+        });
+        
+        // 初期表示時の件数を表示
+        $('#hits').html(listObj.matchingItems.length + "件ヒットしました");
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</body>
+</html>
