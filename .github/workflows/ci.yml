@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory:
+         working-directory: ./school_lib.github.io
 
       - name: Run tests
         run: npm test
